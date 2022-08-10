@@ -1,0 +1,49 @@
+.wrapper {
+    width: 100%;
+}
+
+.header-top {
+    width: 100%;
+    padding: 5px 0;
+    min-height: 40px;
+    border-bottom: 1px solid var(--boder-color);
+    display: block;
+}
+
+.header-top__content {
+    display: flex;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.header-top__content-left {
+    color: var(--low-text-color);
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+.header-top__content-right {
+}
+
+.header-language {
+    color: var(--low-text-color);
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    opacity: 0.8;
+    cursor: pointer;
+    border-left: 1px solid var(--boder-color);
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.header-social-list {
+}
+
+.header-social-item {
+}
+
+.header-main {
+}
