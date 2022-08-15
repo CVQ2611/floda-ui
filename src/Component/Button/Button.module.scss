@@ -1,0 +1,16 @@
+.wrapper {
+    font-size: 12.8px;
+    padding: 10px 0;
+    font-weight: 700;
+    line-height: 16px;
+    cursor: pointer;
+    & :hover {
+        transition: all 0.2s;
+        color: var(--primary-color);
+    }
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}

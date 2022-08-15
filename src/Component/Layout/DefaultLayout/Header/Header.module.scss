@@ -83,8 +83,31 @@
     padding-left: 15px;
     padding-right: 15px;
     align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .header-main__logo {
     height: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: var(--white-color);
+    & > img {
+        cursor: pointer;
+    }
+}
+
+.list-btn {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.list-btn__item {
+    padding: 4px;
+}
+
+.sidebar {
+    display: block;
 }

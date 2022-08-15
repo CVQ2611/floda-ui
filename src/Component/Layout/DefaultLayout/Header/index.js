@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+import Button from '~/Component/Button/Button';
 
 const cx = classNames.bind(style);
 function Header() {
@@ -58,9 +59,29 @@ function Header() {
                 </div>
             </div>
             <div className={cx('header-main')}>
-                <button className={cx('btn header-main__logo')}>
+                <button className={cx('header-main__logo')}>
                     <img src="http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/logo.png" alt="logo" />
                 </button>
+
+                <ul className={cx('list-btn')}>
+                    <li className={cx('list-btn__item')}>
+                        <Button>Trang chủ</Button>
+                    </li>
+                    <li className={cx('list-btn__item')}>
+                        <Button>Giới thiệu</Button>
+                    </li>
+                    <li className={cx('list-btn__item')}>
+                        <Button>Cửa hàng</Button>
+                    </li>
+                    <li className={cx('list-btn__item')}>
+                        <Button>Tin tức</Button>
+                    </li>
+                    <li className={cx('list-btn__item')}>
+                        <Button>Liên hệ</Button>
+                    </li>
+                </ul>
+
+                <div className={cx('sidebar')}>Side bar</div>
             </div>
         </header>
     );
