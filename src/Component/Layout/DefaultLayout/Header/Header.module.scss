@@ -77,4 +77,14 @@
 }
 
 .header-main {
+    max-width: 1200px;
+    height: 100px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.header-main__logo {
+    height: 100%;
 }

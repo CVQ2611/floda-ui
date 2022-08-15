@@ -20,17 +20,35 @@ function Header() {
                             <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
                         </div>
                         <div className={cx('header-social-list')}>
-                            <Tippy content="Facebook">
+                            <Tippy
+                                render={(attrs) => (
+                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                        Facebook
+                                    </div>
+                                )}
+                            >
                                 <button className={cx('btn')}>
                                     <FontAwesomeIcon icon={faFacebookF} className={cx('header-social-item')} />
                                 </button>
                             </Tippy>
-                            <Tippy content="Instagram">
+                            <Tippy
+                                render={(attrs) => (
+                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                        Instagram
+                                    </div>
+                                )}
+                            >
                                 <button className={cx('btn')}>
                                     <FontAwesomeIcon icon={faInstagram} className={cx('header-social-item')} />
                                 </button>
                             </Tippy>
-                            <Tippy content="Twitter">
+                            <Tippy
+                                render={(attrs) => (
+                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                        Twitter
+                                    </div>
+                                )}
+                            >
                                 <button className={cx('btn')}>
                                     <FontAwesomeIcon icon={faTwitter} className={cx('header-social-item')} />
                                 </button>
@@ -40,7 +58,7 @@ function Header() {
                 </div>
             </div>
             <div className={cx('header-main')}>
-                <button className={cx('btn')}>
+                <button className={cx('btn header-main__logo')}>
                     <img src="http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/logo.png" alt="logo" />
                 </button>
             </div>
