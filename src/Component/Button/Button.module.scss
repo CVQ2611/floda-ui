@@ -1,6 +1,6 @@
 .wrapper {
-    font-size: 12.8px;
-    padding: 10px 0;
+    font-size: 1.28rem;
+    padding: 10px 8px;
     font-weight: 700;
     line-height: 16px;
     cursor: pointer;
@@ -13,4 +13,34 @@
 .primary {
     background-color: var(--primary-color);
     color: var(--white-color);
+}
+// btn size
+
+.outline {
+    border: 1px solid var(--boder-color);
+    border-radius: 5px;
+}
+
+.small {
+    width: 132px;
+    height: 40px;
+}
+
+.medium {
+    width: 152px;
+    height: 40px;
+}
+
+.large {
+    width: 198px;
+    height: 40px;
+}
+
+.xlarge {
+    width: 320px;
+    height: 64px;
+}
+
+.icon {
+    margin-left: 0;
 }

@@ -1,10 +1,18 @@
 import style from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import {
+    faAngleDown,
+    faCartShopping,
+    faChevronDown,
+    faHeart,
+    faMagnifyingGlass,
+    faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import Button from '~/Component/Button/Button';
+import React from 'react';
 
 const cx = classNames.bind(style);
 function Header() {
@@ -16,10 +24,18 @@ function Header() {
                         <p>Welcome to Floda online store</p>
                     </div>
                     <div className={cx('header-top__content-right')}>
-                        <div className={cx('header-language')}>
-                            Language
-                            <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
-                        </div>
+                        <Tippy
+                            render={(attrs) => (
+                                <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                    ket qua
+                                </div>
+                            )}
+                        >
+                            <button className={cx('header-language')}>
+                                Language
+                                <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
+                            </button>
+                        </Tippy>
                         <div className={cx('header-social-list')}>
                             <Tippy
                                 render={(attrs) => (
@@ -59,29 +75,76 @@ function Header() {
                 </div>
             </div>
             <div className={cx('header-main')}>
-                <button className={cx('header-main__logo')}>
-                    <img src="http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/logo.png" alt="logo" />
-                </button>
+                <div className={cx('header-main__logo')}>
+                    <button className={cx('header-main__logo-btn')}>
+                        <img src="http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/logo.png" alt="logo" />
+                    </button>
+                </div>
 
                 <ul className={cx('list-btn')}>
                     <li className={cx('list-btn__item')}>
-                        <Button>Trang chủ</Button>
+                        <Button to={'/'}>TRANG CHỦ</Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <Button>Giới thiệu</Button>
+                        <Button to={'/introduce'}>GIỚI THIỆU</Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <Button>Cửa hàng</Button>
+                        <Button to={'/shop'}>
+                            <Tippy
+                                render={(attrs) => (
+                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                        ketqua
+                                    </div>
+                                )}
+                                placement={'bottom'}
+                            >
+                                <button>
+                                    CỬA HÀNG
+                                    <FontAwesomeIcon icon={faChevronDown} className={cx('list-btn__item-icon')} />
+                                </button>
+                            </Tippy>
+                        </Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <Button>Tin tức</Button>
+                        <Button to={'/news'}>TIN TỨC</Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <Button>Liên hệ</Button>
+                        <Button to={'/contact'}>LIÊN HỆ</Button>
                     </li>
                 </ul>
 
-                <div className={cx('sidebar')}>Side bar</div>
+                <div className={cx('sidebar')}>
+                    <Tippy
+                        render={(attrs) => (
+                            <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                Ket qua search
+                            </div>
+                        )}
+                        placement={'bottom'}
+                    >
+                        <button className={cx('sidebar-btn')}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </Tippy>
+                    <button className={cx('sidebar-btn')}>
+                        <FontAwesomeIcon icon={faHeart} />
+                    </button>
+                    <button className={cx('sidebar-btn')}>
+                        <FontAwesomeIcon icon={faUser} />
+                    </button>
+                    <Tippy
+                        render={(attrs) => (
+                            <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                Ket qua search
+                            </div>
+                        )}
+                        placement={'bottom'}
+                    >
+                        <button className={cx('sidebar-btn')}>
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </button>
+                    </Tippy>
+                </div>
             </div>
         </header>
     );

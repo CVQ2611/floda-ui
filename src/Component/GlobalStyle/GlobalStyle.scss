@@ -31,6 +31,8 @@ button {
     border: none;
     outline: none;
     background-color: transparent;
+    color: var(--heigh-text-color);
+    font-weight: 700;
 }
 
 .sub-button {
@@ -40,4 +42,9 @@ button {
     font-size: 1.2rem;
     line-height: 2.2rem;
     padding: 4px 8px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--heigh-text-color);
 }

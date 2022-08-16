@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
-function Button({ to, href, link, onClick, children, primary, ...passProps }) {
+function Button({ to, href, link, onClick, children, primary, outline, small, medium, large, xlarge, ...passProps }) {
     let Comp = 'button';
     const props = {
         onClick,
-        passProps,
+        ...passProps,
     };
     if (to) {
         props.to = to;
@@ -18,6 +18,11 @@ function Button({ to, href, link, onClick, children, primary, ...passProps }) {
     }
     const classes = cx('wrapper', {
         primary,
+        outline,
+        small,
+        medium,
+        large,
+        xlarge,
     });
     return (
         <Comp className={classes} {...props}>
