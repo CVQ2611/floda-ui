@@ -3,7 +3,23 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
-function Button({ to, href, link, onClick, children, primary, outline, small, medium, large, xlarge, ...passProps }) {
+function Button({
+    to,
+    href,
+    link,
+    onClick,
+    children,
+    primary,
+    black,
+    outline,
+    small,
+    medium,
+    large,
+    xlarge,
+    inList,
+    searchResult,
+    ...passProps
+}) {
     let Comp = 'button';
     const props = {
         onClick,
@@ -19,10 +35,13 @@ function Button({ to, href, link, onClick, children, primary, outline, small, me
     const classes = cx('wrapper', {
         primary,
         outline,
+        black,
         small,
         medium,
         large,
         xlarge,
+        inList,
+        searchResult,
     });
     return (
         <Comp className={classes} {...props}>

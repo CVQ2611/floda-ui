@@ -28,6 +28,7 @@
     display: flex;
 }
 
+// language
 .header-language {
     color: var(--low-text-color);
     font-size: 1.3rem;
@@ -109,6 +110,12 @@
 
 .list-btn__item {
     margin: 16px;
+    cursor: pointer;
+}
+
+.list-btn__item > button {
+    font-size: 1.28rem;
+    font-weight: 700;
 }
 
 .list-btn__item-icon {

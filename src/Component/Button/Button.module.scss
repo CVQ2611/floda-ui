@@ -1,17 +1,28 @@
 .wrapper {
+    width: 100%;
     font-size: 1.28rem;
     padding: 10px 8px;
     font-weight: 700;
     line-height: 16px;
     cursor: pointer;
-    & :hover {
-        transition: all 0.2s;
-        color: var(--primary-color);
-    }
+    // & :hover {
+    //     transition: all 0.2s;
+    //     color: var(--primary-color);
+    // }
 }
 
 .primary {
     background-color: var(--primary-color);
+    color: var(--white-color);
+    margin-bottom: 8px;
+    &:hover {
+        transition: color 0.2s;
+        filter: brightness(1.05);
+    }
+}
+
+.black {
+    background-color: var(--black-color);
     color: var(--white-color);
 }
 // btn size
@@ -43,4 +54,21 @@
 
 .icon {
     margin-left: 0;
+}
+
+.inList {
+    text-align: start;
+    color: var(--low-text-color);
+    padding-left: 16px;
+    opacity: 0.7;
+    &:hover {
+        opacity: 1;
+        color: var(--heigh-text-color);
+        background-color: var(--boder-color);
+    }
+}
+
+.searchResult {
+    opacity: 1;
+    padding: 0 16px;
 }
