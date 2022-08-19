@@ -4,25 +4,24 @@ import CartResult from '~/Component/CartResult';
 import { Wrapper as PoperWrapper } from '~/Component/Poper';
 import style from './UserCart.module.scss';
 import Button from '~/Component/Button';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(style);
-function UserCart({ children }) {
+function UserCart({ children, products = [] }) {
+    // const [itemCart, setItemCart] = useState([]);
     return (
         <Tippy
             render={(attrs) => (
                 <div className={cx('wrapper')} tabIndex="-1" {...attrs}>
                     <PoperWrapper>
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
-                        <CartResult />
+                        {products.map((product) => (
+                            <CartResult key={product.id} data={product} />
+                        ))}
                         <div className={cx('total')}>
                             <span className={cx('total-label')}>Tạm tính: </span>
-                            <span className={cx('total-prive')}>240.000đ</span>
+                            <span className={cx('total-prive')}>
+                                {products.prive - (products.sale * products.prive) / 100}đ
+                            </span>
                         </div>
                         <div className={cx('button')}>
                             <Button primary>XEM GIỎ HÀNG</Button>

@@ -9,19 +9,23 @@
     width: 100%;
     padding: 16px 8px;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     border-bottom: 1px solid var(--boder-color);
 }
 
 .avatar {
     display: block;
-    height: 45px;
+    flex: 1;
     padding: 0 4px;
+    & > img {
+        height: 45px;
+    }
 }
 
 .info-product {
     padding: 0 4px;
+    flex: 3;
 }
 
 .name-product {

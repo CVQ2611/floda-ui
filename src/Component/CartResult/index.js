@@ -5,19 +5,18 @@ import Button from '../Button';
 import style from './CartResult.module.scss';
 
 const cx = classNames.bind(style);
-function CartResult() {
+function CartResult({ data }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content')}>
-                <img
-                    className={cx('avatar')}
-                    src={'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-6.jpg'}
-                    alt={'avatar'}
-                />
+                <div className={cx('avatar')}>
+                    <img src={data.src} alt={data.name} />
+                </div>
                 <div className={cx('info-product')}>
-                    <Button className={cx('name-product')}>Hyacinth white stick</Button>
+                    <Button className={cx('name-product')}>{data.name}</Button>
                     <div className={cx('prive-product')}>
-                        <span className={cx('has-product')}>1</span> x <span className={cx('one-prive')}>240.000đ</span>
+                        <span className={cx('has-product')}>1</span> x{' '}
+                        <span className={cx('one-prive')}>{data.prive - (data.sale * data.prive) / 100}đ</span>
                     </div>
                 </div>
                 <div className={cx('closer')}>

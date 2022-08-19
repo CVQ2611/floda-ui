@@ -17,6 +17,7 @@ function Button({
     large,
     xlarge,
     inList,
+    active,
     searchResult,
     ...passProps
 }) {
@@ -41,6 +42,7 @@ function Button({
         large,
         xlarge,
         inList,
+        active,
         searchResult,
     });
     return (

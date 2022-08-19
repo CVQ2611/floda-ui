@@ -3,18 +3,16 @@ import style from './SearchResult.module.scss';
 
 const cx = classNames.bind(style);
 
-function SearchResult() {
+function SearchResult({ data }) {
     return (
         <div className={cx('wrapper')}>
-            <img
-                className={cx('avatar')}
-                src={'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg'}
-                alt={'avatar'}
-            />
-            <div className={cx('name-product')}>Hyacinth white stick</div>
+            <div className={cx('avatar')}>
+                <img src={data.src} alt={data.name} />
+            </div>
+            <div className={cx('name-product')}>{data.name}</div>
             <div className={cx('prive-product')}>
-                <span className={cx('base-prive')}>270.000đ</span>
-                <span className={cx('sale-prive')}>250.000đ</span>
+                <span className={cx('base-prive')}>{data.prive}đ</span>
+                <span className={cx('sale-prive')}>{data.prive - (data.sale * data.prive) / 100}đ</span>
             </div>
         </div>
     );

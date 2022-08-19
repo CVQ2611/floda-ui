@@ -11,7 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-// import Button from '~/Component/Button';
+import Button from '~/Component/Button';
 import React from 'react';
 // import { Wrapper as PoperWrapper } from '~/Component/Poper';
 import Language from '~/Component/Poper/Language';
@@ -52,6 +52,37 @@ const MENU_BUTTONS = [
         to: '/',
     },
 ];
+
+const LIST_PRODUCT = [
+    {
+        id: 1,
+        name: 'Hoa Tuy Luýp',
+        prive: 240000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
+        sale: 50,
+    },
+    {
+        id: 2,
+        name: 'Hoa Hồng',
+        prive: 260000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
+        sale: 30,
+    },
+    {
+        id: 3,
+        name: 'Hoa Hướng Dương ',
+        prive: 270000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
+        sale: 60,
+    },
+    {
+        id: 4,
+        name: 'Hoa Lan',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        sale: 80,
+    },
+];
 function Header() {
     return (
         <header className={cx('wrapper')}>
@@ -61,12 +92,14 @@ function Header() {
                         <p>Welcome to Floda online store</p>
                     </div>
                     <div className={cx('header-top__content-right')}>
-                        <Language items={MENU_ITEMS}>
-                            <button className={cx('header-language')}>
-                                Language
-                                <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
-                            </button>
-                        </Language>
+                        <span>
+                            <Language items={MENU_ITEMS}>
+                                <button className={cx('header-language')}>
+                                    Language
+                                    <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
+                                </button>
+                            </Language>
+                        </span>
                         <div className={cx('header-social-list')}>
                             <Tippy
                                 render={(attrs) => (
@@ -107,41 +140,55 @@ function Header() {
             </div>
             <div className={cx('header-main')}>
                 <div className={cx('header-main__logo')}>
-                    <button className={cx('header-main__logo-btn')}>
+                    <Button active className={cx('header-main__logo-btn')}>
                         <img src="http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/logo.png" alt="logo" />
-                    </button>
+                    </Button>
                 </div>
 
                 <ul className={cx('list-btn')}>
                     <li className={cx('list-btn__item')}>
-                        <button to={'/'}>TRANG CHỦ</button>
+                        <Button active to={'/'}>
+                            TRANG CHỦ
+                        </Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <button to={'/introduce'}>GIỚI THIỆU</button>
+                        <Button active to={'/introduce'}>
+                            GIỚI THIỆU
+                        </Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <MenuButton items={MENU_BUTTONS}>
-                            <button to={'/shop'}>
-                                CỬA HÀNG
-                                <FontAwesomeIcon icon={faChevronDown} className={cx('list-btn__item-icon')} />
-                            </button>
-                        </MenuButton>
+                        <div>
+                            <MenuButton items={MENU_BUTTONS}>
+                                <span>
+                                    <Button active to={'/shop'}>
+                                        CỬA HÀNG
+                                        <FontAwesomeIcon icon={faChevronDown} className={cx('list-btn__item-icon')} />
+                                    </Button>
+                                </span>
+                            </MenuButton>
+                        </div>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <button to={'/news'}>TIN TỨC</button>
+                        <Button active to={'/news'}>
+                            TIN TỨC
+                        </Button>
                     </li>
                     <li className={cx('list-btn__item')}>
-                        <button to={'/contact'}>LIÊN HỆ</button>
+                        <Button active to={'/contact'}>
+                            LIÊN HỆ
+                        </Button>
                     </li>
                 </ul>
 
                 <div className={cx('sidebar')}>
                     {/* search */}
-                    <Search>
-                        <button className={cx('sidebar-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </Search>
+                    <div>
+                        <Search products={LIST_PRODUCT}>
+                            <button className={cx('sidebar-btn')}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </Search>
+                    </div>
 
                     <button className={cx('sidebar-btn')}>
                         <FontAwesomeIcon icon={faHeart} />
@@ -151,11 +198,13 @@ function Header() {
                     </button>
 
                     {/* useCart */}
-                    <UserCart>
-                        <button className={cx('sidebar-btn')}>
-                            <FontAwesomeIcon icon={faCartShopping} />
-                        </button>
-                    </UserCart>
+                    <div>
+                        <UserCart products={LIST_PRODUCT}>
+                            <button className={cx('sidebar-btn')}>
+                                <FontAwesomeIcon icon={faCartShopping} />
+                            </button>
+                        </UserCart>
+                    </div>
                 </div>
             </div>
         </header>
