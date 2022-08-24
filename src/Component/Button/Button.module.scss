@@ -6,10 +6,6 @@
     font-weight: 700;
     line-height: 16px;
     cursor: pointer;
-    // & :hover {
-    //     transition: all 0.2s;
-    //     color: var(--primary-color);
-    // }
 }
 
 .primary {
@@ -24,6 +20,7 @@
 
 .active {
     & :hover {
+        transition: color 0.2s;
         color: var(--primary-color);
     }
 }
@@ -41,7 +38,7 @@
 
 .small {
     width: 132px;
-    height: 40px;
+    height: 52px;
 }
 
 .medium {

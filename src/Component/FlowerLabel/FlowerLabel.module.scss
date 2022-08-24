@@ -1,0 +1,72 @@
+.wrapper {
+    width: 100%;
+    margin-top: 36px;
+    padding: 36px;
+    // background-color: red;
+}
+
+.contai {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    flex: 1;
+    // background-image: url('http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda2.jpg');
+    margin: 0 16px;
+    height: 282px;
+    position: relative;
+    transition: all 0.2s;
+    &:hover {
+        filter: brightness(1.03);
+        transition: all 0.2s;
+    }
+}
+
+.box-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-slogan {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    text-align: center;
+}
+
+.box-name {
+    font-size: 2.4rem;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.box-button {
+    align-items: center;
+    position: relative;
+    & > span {
+        background-color: black;
+        display: block;
+        width: 50px;
+        height: 2px;
+        position: absolute;
+        top: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.4;
+        transition: all 0.2s;
+    }
+    &:hover > span {
+        opacity: 1;
+        background-color: var(--primary-color);
+        width: 60%;
+        transition: all 0.2s;
+    }
+}

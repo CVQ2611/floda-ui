@@ -1,0 +1,81 @@
+.banner {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // background-image: url('http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/home1-slide1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: zoomIn ease-in 12s;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.banner-label {
+    position: relative;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+
+.banner-label__content {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-label__content-animation {
+    max-width: 600px;
+    animation: fadeIn linear 2.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.banner-label__content-header {
+    font-size: 3.2rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+}
+
+.banner-label__content-desc {
+    font-size: 4.2rem;
+    font-weight: 400;
+    line-height: 5.2rem;
+    padding-bottom: 16px;
+}
+
+.img1 {
+    display: block;
+}
+.img2 {
+    display: block;
+}
