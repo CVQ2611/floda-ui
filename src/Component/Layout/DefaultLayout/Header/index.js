@@ -53,7 +53,7 @@ const MENU_BUTTONS = [
     },
 ];
 
-const LIST_PRODUCT = [
+export const LIST_PRODUCT = [
     {
         id: 1,
         name: 'Hoa Tuy Luýp',
@@ -80,6 +80,34 @@ const LIST_PRODUCT = [
         name: 'Hoa Lan',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        sale: 80,
+    },
+    {
+        id: 5,
+        name: 'Hoa Ly',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
+        sale: 80,
+    },
+    {
+        id: 6,
+        name: 'Hoa Sen',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        sale: 80,
+    },
+    {
+        id: 7,
+        name: 'Hoa Mai',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
+        sale: 80,
+    },
+    {
+        id: 8,
+        name: 'Hoa Đào',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
         sale: 80,
     },
 ];

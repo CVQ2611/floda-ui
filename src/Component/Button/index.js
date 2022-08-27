@@ -19,6 +19,7 @@ function Button({
     inList,
     active,
     searchResult,
+    product,
     ...passProps
 }) {
     let Comp = 'button';
@@ -44,6 +45,7 @@ function Button({
         inList,
         active,
         searchResult,
+        product,
     });
     return (
         <Comp className={classes} {...props}>

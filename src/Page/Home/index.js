@@ -1,9 +1,12 @@
 import classNames from 'classnames/bind';
+import Button from '~/Component/Button';
 import FlowerLabel from '~/Component/FlowerLabel';
 import LabelIcon from '~/Component/LabelIcon';
+import ListProduct from '~/Component/ListProduct/indiex';
+import Product from '~/Component/Product';
 import Slider from '~/Component/Slider';
 import style from './Home.module.scss';
-
+import { LIST_PRODUCT } from '~/Component/Layout/DefaultLayout/Header';
 const cx = classNames.bind(style);
 const FLOWER_LABEL = [
     {
@@ -25,6 +28,21 @@ const FLOWER_LABEL = [
         url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda3.jpg',
     },
 ];
+
+// const FLOWER_LABEL_BOT = [
+//     {
+//         id: 1,
+//         slogan: 'Top Friday',
+//         name: 'Vang Gold',
+//         url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda1.jpg',
+//     },
+//     {
+//         id: 2,
+//         slogan: 'Black Friday',
+//         name: 'Hoa Lan',
+//         url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda2.jpg',
+//     },
+// ];
 
 const ICON_LIST = [
     {
@@ -58,6 +76,19 @@ function HomePage() {
             <Slider />
             <FlowerLabel datas={FLOWER_LABEL} />
             <LabelIcon datas={ICON_LIST} />
+            <ListProduct>
+                <Product datas={LIST_PRODUCT} />
+                <div className={cx('more_button')}>
+                    <Button large={true} primary={true}>
+                        Xem Thêm Sản Phẩm
+                    </Button>
+                </div>
+            </ListProduct>
+            {/* <FlowerLabel datas={FLOWER_LABEL_BOT} />
+            <ListProduct>
+                <Product datas={LIST_PRODUCT} />
+                <div className={cx('more_button')}></div>
+            </ListProduct> */}
         </div>
     );
 }

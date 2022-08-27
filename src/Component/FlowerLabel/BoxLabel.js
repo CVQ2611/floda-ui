@@ -22,7 +22,7 @@ function BoxLabel({ item = [] }) {
                 <div className={cx('box-slogan')}>{item.slogan}</div>
                 <div className={cx('box-name')}>{item.name}</div>
                 <div className={cx('box-button')}>
-                    <Button>Mua ngay</Button>
+                    <Button active={hover}>Mua ngay</Button>
                     <span></span>
                 </div>
             </div>
