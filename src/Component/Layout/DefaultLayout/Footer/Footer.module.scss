@@ -1,0 +1,58 @@
+.wrapper {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.content {
+    max-width: 1200px;
+    margin: auto;
+    border-top: 1px solid var(--boder-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 0;
+}
+
+.header {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+ul > li {
+    padding: 4px 0;
+    margin: 4px 0;
+}
+
+li > span {
+    margin-right: 4px;
+    font-size: 1.4rem;
+}
+
+.contact-shop {
+    width: 41.666667%;
+    padding: 0 16px;
+}
+
+.menu-page {
+    width: 25%;
+}
+
+.label-page {
+    width: 16.66667%;
+    padding: 0 16px;
+}
+
+.icon {
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+}
+
+.cre {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    background-color: var(--boder-color);
+    height: 36px;
+    font-size: 1.4rem;
+    line-height: 3.6rem;
+}

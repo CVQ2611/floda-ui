@@ -29,20 +29,20 @@ const FLOWER_LABEL = [
     },
 ];
 
-// const FLOWER_LABEL_BOT = [
-//     {
-//         id: 1,
-//         slogan: 'Top Friday',
-//         name: 'Vang Gold',
-//         url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda1.jpg',
-//     },
-//     {
-//         id: 2,
-//         slogan: 'Black Friday',
-//         name: 'Hoa Lan',
-//         url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/img1-top-floda2.jpg',
-//     },
-// ];
+const FLOWER_LABEL_FORYOU = [
+    {
+        id: 1,
+        slogan: 'For you',
+        name: 'Tuylip Tower',
+        url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/banner-1.jpg',
+    },
+    {
+        id: 2,
+        slogan: 'For you',
+        name: 'Flower & box',
+        url: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/banner-2.jpg',
+    },
+];
 
 const ICON_LIST = [
     {
@@ -70,13 +70,54 @@ const ICON_LIST = [
         desc: 'Với Đơn Hàng Trên 1 Triệu',
     },
 ];
+
+const LIST_PRODUCT_LEAD = [
+    {
+        id: 1,
+        name: 'Hoa Tuy Luýp',
+        prive: 240000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
+        sale: 50,
+    },
+    {
+        id: 2,
+        name: 'Hoa Hồng',
+        prive: 260000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
+        sale: 30,
+    },
+    {
+        id: 3,
+        name: 'Hoa Hướng Dương ',
+        prive: 270000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
+        sale: 60,
+    },
+    {
+        id: 4,
+        name: 'Hoa Lan',
+        prive: 280000,
+        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        sale: 80,
+    },
+];
+
+const LABEL_PRODUCT_NEW = {
+    header: 'Sản Phẩm Mới',
+    desc: 'Sản phẩm mới, ý tưởng mới, phong cách mới, vẻ đẹp mới',
+};
+
+const LABEL_PRODUCT_LEAD = {
+    header: 'Sản Phẩm Hàng Đầu',
+    desc: 'Những sản phẩm hàng đầu của cửa hàng',
+};
 function HomePage() {
     return (
         <div className={cx('wrapper')}>
             <Slider />
             <FlowerLabel datas={FLOWER_LABEL} />
             <LabelIcon datas={ICON_LIST} />
-            <ListProduct>
+            <ListProduct datas={LABEL_PRODUCT_NEW}>
                 <Product datas={LIST_PRODUCT} />
                 <div className={cx('more_button')}>
                     <Button large={true} primary={true}>
@@ -84,11 +125,10 @@ function HomePage() {
                     </Button>
                 </div>
             </ListProduct>
-            {/* <FlowerLabel datas={FLOWER_LABEL_BOT} />
-            <ListProduct>
-                <Product datas={LIST_PRODUCT} />
-                <div className={cx('more_button')}></div>
-            </ListProduct> */}
+            <FlowerLabel datas={FLOWER_LABEL_FORYOU} />
+            <ListProduct datas={LABEL_PRODUCT_LEAD}>
+                <Product datas={LIST_PRODUCT_LEAD} />
+            </ListProduct>
         </div>
     );
 }

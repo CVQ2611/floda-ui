@@ -30,7 +30,7 @@ const MENU_ITEMS = [
     },
 ];
 
-const MENU_BUTTONS = [
+export const MENU_BUTTONS = [
     {
         title: 'Hoa Của Mẹ',
         to: '/',

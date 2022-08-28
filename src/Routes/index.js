@@ -5,11 +5,11 @@ import NewsPage from '~/Page/News';
 import ContactPage from '~/Page/Contact';
 
 export const publicPage = [
-    { path: '/', component: HomePage },
-    { path: '/introduce', component: IntroducePage },
-    { path: '/shop', component: ShopPage },
-    { path: '/news', component: NewsPage },
-    { path: '/contact', component: ContactPage },
+    { path: '/', name: 'Trang Chủ', component: HomePage },
+    { path: '/introduce', name: 'Giới thiệu', component: IntroducePage },
+    { path: '/shop', name: 'Cửa Hàng', component: ShopPage },
+    { path: '/news', name: 'Tin Tức', component: NewsPage },
+    { path: '/contact', name: 'Lên Hệ', component: ContactPage },
 ];
 
 export const privatePage = [];
