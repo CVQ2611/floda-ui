@@ -6,7 +6,7 @@ import ContactPage from '~/Page/Contact';
 
 export const publicPage = [
     { path: '/', name: 'Trang Chủ', component: HomePage },
-    { path: '/introduce', name: 'Giới thiệu', component: IntroducePage },
+    { path: '/introduce', name: 'Giới Thiệu', component: IntroducePage },
     { path: '/shop', name: 'Cửa Hàng', component: ShopPage },
     { path: '/news', name: 'Tin Tức', component: NewsPage },
     { path: '/contact', name: 'Lên Hệ', component: ContactPage },
