@@ -1,6 +1,6 @@
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import Adress from '~/Component/Adress';
 import Button from '~/Component/Button';
 import style from '~/Component/Layout/DefaultLayout/Footer/Footer.module.scss';
 import { publicPage } from '~/Routes';
@@ -58,17 +58,7 @@ function Footer() {
             <div className={cx('content')}>
                 <div className={cx('contact-shop')}>
                     <p className={cx('header')}>Liên Hệ</p>
-                    <ul>
-                        {CONTACT_SHOP.map((item, index) => {
-                            return (
-                                <li key={index}>
-                                    <FontAwesomeIcon icon={item.icon} className={cx('icon')} />
-                                    <span>{item.type}:</span>
-                                    <span>{item.contact}</span>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                    <Adress item={CONTACT_SHOP} />
                 </div>
                 <div className={cx('label-page')}>
                     <p className={cx('header')}>Danh Mục</p>
