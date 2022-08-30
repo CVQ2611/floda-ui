@@ -14,7 +14,7 @@ function IntroduceContent({ item = {} }) {
             <div className={cx('content')}>
                 <IntroItem datas={item.leftItem} />
                 <div className={cx('center-content')}>
-                    <img src={item.centerSrc} />
+                    <img src={item.centerSrc} alt={'anh'} />
                 </div>
                 <IntroItem datas={item.rightItem} />
             </div>

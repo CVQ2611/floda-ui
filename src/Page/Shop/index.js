@@ -1,5 +1,12 @@
 function ShopPage() {
-    return <h2>ShopPage</h2>;
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('container')}>
+                {/* header */}
+                {/* content */}
+            </div>
+        </div>
+    );
 }
 
 export default ShopPage;

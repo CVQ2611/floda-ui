@@ -1,0 +1,40 @@
+.wrapper {
+    width: 100%;
+    & + .wrapper {
+        margin-left: 8px;
+    }
+}
+
+.input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--boder-color);
+    outline: none;
+    font-size: 1.6rem;
+    padding-left: 12px;
+    color: #797979;
+}
+
+.focus {
+    border-color: var(--black-color);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(248 183 66 / 60%);
+    color: var(--low-text-color);
+}
+
+.error {
+    border-color: var(--primary-color);
+}
+
+.message {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.textInput {
+    max-width: 100%;
+    height: 120px;
+    resize: vertical;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 12px;
+}

@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+// import { useState } from 'react';
 import style from './Slider.module.scss';
 import SliderCont from './SliderCont';
 
@@ -8,7 +8,7 @@ const linkImg1 = 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/h
 // const linkImg2 = 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/home1-slide2.jpg';
 
 function Slider() {
-    const [image, setImage] = useState(linkImg1);
+    // const [image, setImage] = useState(linkImg1);
     // useEffect(() => {
     //     setInterval(() => {
     //         refBaner.current.style.display = 'none';
@@ -26,7 +26,7 @@ function Slider() {
     // }, [image]);
     return (
         <div className={cx('banner')}>
-            <SliderCont img={image} />
+            <SliderCont img={linkImg1} />
         </div>
     );
 }

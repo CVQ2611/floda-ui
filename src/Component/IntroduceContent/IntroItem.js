@@ -8,7 +8,7 @@ function IntroItem({ datas = [] }) {
         <div className={cx('side-content')}>
             {datas.map((data) => (
                 <div key={data.id} className={cx('container')}>
-                    <img src={data.src} />
+                    <img src={data.src} alt={'anh'} />
                     <h1 className={cx('icon-header')}>{data.iconHeader}</h1>
                     <p className={cx('icon-desc')}>{data.iconDecs}</p>
                 </div>

@@ -27,7 +27,9 @@ const CONTACT_SHOP = [
 function ContactContai() {
     return (
         <div className={cx('wrapper')}>
-            <Map />
+            <div className={cx('map')}>
+                <Map />
+            </div>
             <div className={cx('info')}>
                 <div className={cx('header')}>
                     <div className={cx('logo')}>

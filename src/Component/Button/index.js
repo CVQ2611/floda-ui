@@ -8,6 +8,7 @@ function Button({
     href,
     link,
     onClick,
+    onSubmit,
     children,
     primary,
     black,
