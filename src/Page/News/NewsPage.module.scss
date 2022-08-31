@@ -1,0 +1,23 @@
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 8px;
+}
+
+.content {
+    display: flex;
+    padding-top: 8px;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 28px 0;
+}
+
+.list-product {
+    width: 75%;
+}

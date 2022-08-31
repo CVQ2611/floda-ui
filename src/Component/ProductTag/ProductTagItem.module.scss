@@ -13,10 +13,15 @@
     margin-bottom: 4px;
 }
 
+.button-list {
+    width: 100%;
+}
+
 .product-item {
     width: 100%;
     padding: 16px 8px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-bottom: 1px solid var(--boder-color);
 }

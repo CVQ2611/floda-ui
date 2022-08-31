@@ -1,6 +1,6 @@
-import Button from '~/Component/Button';
 import classNames from 'classnames/bind';
 import style from './SidebarButton.module.scss';
+import MenuItem from '../Poper/MenuButton/MenuButton';
 const cx = classNames.bind(style);
 
 function SidebarButton({ datas, name }) {
@@ -10,9 +10,7 @@ function SidebarButton({ datas, name }) {
             <ul className={cx('button-list')}>
                 {datas.map((button, index) => (
                     <li className={cx('button-item')} key={index}>
-                        <Button to={button.to} active sidebar={true}>
-                            {button.title}
-                        </Button>
+                        <MenuItem data={button} />
                     </li>
                 ))}
             </ul>
