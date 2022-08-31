@@ -1,16 +1,14 @@
 .content {
     width: 100%;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .product {
     position: relative;
-    max-width: 25%;
+    max-width: 23%;
     min-width: 278px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin: 12px 8px;
     padding: 16px 16px;
 }
 
@@ -49,7 +47,7 @@
 .product-like-btn {
     position: absolute;
     top: 8%;
-    right: 8%;
+    right: 0%;
     width: 40px;
     height: 40px;
     background-color: transparent;

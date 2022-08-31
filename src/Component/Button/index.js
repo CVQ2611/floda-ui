@@ -22,6 +22,7 @@ function Button({
     searchResult,
     product,
     footer,
+    sidebar,
     ...passProps
 }) {
     let Comp = 'button';
@@ -49,6 +50,7 @@ function Button({
         searchResult,
         product,
         footer,
+        sidebar,
     });
     return (
         <Comp className={classes} {...props}>

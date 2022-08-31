@@ -5,35 +5,55 @@ import style from './Form.module.scss';
 import Button from '../Button';
 const cx = classNames.bind(style);
 function Form() {
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     // console.log(data);
     // lấy ra dât từ input
-    const getData = (item) => {
-        setData((prev) => [...prev, item]);
-    };
+    // const getData = (item) => {
+    //     setData((prev) => [...prev, item]);
+    // };
+    const [values, setValues] = useState({
+        usename: '',
+        email: '',
+        phonenumber: '',
+        address: '',
+        message: '',
+    });
+
     const handleSubmit = (e) => {
-        alert(`Submit Succes: ${data}`);
         e.preventDefault();
+        const data = new FormData(e.target);
+        alert('Succes!');
+    };
+
+    const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
     };
     return (
-        <div className={cx('form')}>
+        <form className={cx('form')} onSubmit={handleSubmit}>
             <div className={cx('form-1')}>
-                <Input type={'text'} placeholder={'Họ và tên'} isRequire onBlur={getData} />
-                <Input type={'email'} placeholder={'Emai của bạn'} isEmail onBlur={getData} />
+                <Input
+                    name={'usename'}
+                    type={'text'}
+                    placeholder={'Họ và tên'}
+                    isRequire
+                    value={values.usename}
+                    onChange={onChange}
+                />
+                <Input name={'email'} type={'email'} placeholder={'Emai của bạn'} isEmail />
             </div>
             <div className={cx('form-2')}>
-                <Input type={'phone'} placeholder={'Số điện thoại của bạn'} />
-                <Input type={'text'} placeholder={'Nhập địa chỉ của bạn'} />
+                <Input name={'phonenumber'} type={'phone'} placeholder={'Số điện thoại của bạn'} />
+                <Input name={'address'} type={'text'} placeholder={'Nhập địa chỉ của bạn'} />
             </div>
             <div className={cx('form-3')}>
-                <Input textInput isRequire type={'text'} placeholder={'Lời nhắn của bạn'} onBlur={getData} />
+                <Input name={'message'} textInput isRequire type={'text'} placeholder={'Lời nhắn của bạn'} />
             </div>
             <span className={cx('button')}>
-                <Button primary large={true} onClick={handleSubmit}>
+                <Button primary large={true}>
                     Gửi
                 </Button>
             </span>
-        </div>
+        </form>
     );
 }
 

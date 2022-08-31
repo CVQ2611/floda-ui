@@ -14,41 +14,6 @@
     border-bottom: 1px solid var(--boder-color);
 }
 
-.avatar {
-    display: block;
-    flex: 1;
-    padding: 0 4px;
-    & > img {
-        height: 45px;
-    }
-}
-
-.info-product {
-    padding: 0 4px;
-    flex: 3;
-}
-
-.name-product {
-    padding-right: 8px;
-    margin-bottom: 4px;
-    font-weight: 400;
-    font-size: 1.4rem;
-    text-align: start;
-    & :hover {
-        color: var(--primary-color);
-    }
-}
-
-.prive-product {
-    opacity: 0.7;
-    font-size: 1.28rem;
-}
-
-.one-prive {
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
 .closer {
     padding: 0 4px;
     height: 100%;

@@ -10,11 +10,13 @@ function Input({
     isEmail = false,
     isRePassword = false,
     textInput = false,
+    name,
     type,
     placeholder,
     minLenght,
     onBlur,
     password,
+    onChange,
 }) {
     const ref = useRef(null);
     const [value, setValue] = useState('');
@@ -38,7 +40,7 @@ function Input({
         setFocus(false);
         if (isRequire) {
             if (value.trim()) {
-                onBlur(value);
+                // onBlur(value);
             } else {
                 setMessage(`Vui lòng nhập đầy đủ ${placeholder}`);
                 setError(true);
@@ -47,21 +49,21 @@ function Input({
             //eslint-disable-next-line
             const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (value.match(mailformat)) {
-                onBlur(value);
+                // onBlur(value);
             } else {
                 setMessage(`Vui lòng nhập đầy đủ ${placeholder}`);
                 setError(true);
             }
         } else if (isPassWord) {
             if (value.trim().length >= minLenght) {
-                onBlur(value);
+                // onBlur(value);
             } else {
                 setMessage(`Vui lòng nhập ${placeholder} tối thiểu 6 ký tự`);
                 setError(true);
             }
         } else if (isRePassword) {
             if (value === password) {
-                onBlur(value);
+                // onBlur(value);
             } else {
                 setMessage('Nội dung nhập không khớp');
                 setError(true);
@@ -74,16 +76,21 @@ function Input({
         setFocus(true);
     };
 
+    const handleChange = (e) => {
+        setValue(e.target.value);
+    };
+
     return (
         <>
             <div className={cx('wrapper')}>
                 <Comp
+                    name={name}
                     type={type}
                     placeholder={placeholder}
                     value={value}
                     ref={ref}
                     className={classesInput}
-                    onChange={(e) => setValue(e.target.value)}
+                    onChange={handleChange}
                     onBlur={handleBlur}
                     onFocus={handleFocus}
                 />
