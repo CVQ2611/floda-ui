@@ -5,12 +5,6 @@ import style from './Form.module.scss';
 import Button from '../Button';
 const cx = classNames.bind(style);
 function Form() {
-    // const [data, setData] = useState([]);
-    // console.log(data);
-    // lấy ra dât từ input
-    // const getData = (item) => {
-    //     setData((prev) => [...prev, item]);
-    // };
     const [values, setValues] = useState({
         usename: '',
         email: '',
@@ -21,7 +15,6 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = new FormData(e.target);
         alert('Succes!');
     };
 

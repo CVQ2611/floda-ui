@@ -50,7 +50,7 @@ function ProductItem({ item = [] }) {
             <div className={cx('tag-sale')}>
                 {item.sale}% <br></br> Giảm{' '}
             </div>
-            <Button product={true}>
+            <Button product={true} to={item.to}>
                 <div
                     className={cx('product-img')}
                     style={image}

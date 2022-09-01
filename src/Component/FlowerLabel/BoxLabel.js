@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(style);
 
-function BoxLabel({ item = [] }) {
+function BoxLabel({ item }) {
     const [hover, setHover] = useState(false);
     const image = {
         backgroundImage: `url(${item.url})`,
@@ -22,7 +22,9 @@ function BoxLabel({ item = [] }) {
                 <div className={cx('box-slogan')}>{item.slogan}</div>
                 <div className={cx('box-name')}>{item.name}</div>
                 <div className={cx('box-button')}>
-                    <Button active={hover}>Mua ngay</Button>
+                    <Button active={hover} textCenter to={item.to}>
+                        Mua ngay
+                    </Button>
                     <span></span>
                 </div>
             </div>

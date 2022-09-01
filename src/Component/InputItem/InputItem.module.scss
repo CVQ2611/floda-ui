@@ -1,0 +1,38 @@
+.wrapper {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 4px;
+}
+
+.input {
+    display: block;
+    height: 36px;
+    width: 100%;
+    border: 1px solid var(--boder-color);
+    outline: none;
+    color: var(--low-text-color);
+    padding-left: 8px;
+}
+
+.input:invalid[focus='true'] {
+    border: 1px solid var(--primary-color);
+}
+.input:invalid[focus='true'] ~ .error-message {
+    display: block;
+}
+
+.error-message {
+    display: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    width: 70%;
+}

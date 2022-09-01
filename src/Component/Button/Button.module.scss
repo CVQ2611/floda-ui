@@ -10,6 +10,7 @@
 }
 
 .primary {
+    text-align: center;
     background-color: var(--primary-color);
     color: var(--white-color);
     margin-bottom: 8px;
@@ -43,12 +44,17 @@
 }
 
 .medium {
-    width: 152px;
-    height: 40px;
+    max-width: 152px;
+    min-height: 54px;
+    font-size: 2rem;
+    display: block;
+    line-height: 3.2rem;
 }
 
 .large {
     font-size: 1.6rem;
+    padding-left: 16px;
+    padding-right: 16px;
     width: 198px;
     height: 40px;
 }
@@ -91,14 +97,7 @@
     font-size: 1.4rem;
 }
 
-.hide {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.4rem;
-    font-weight: 200;
-    line-height: 1.8rem;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    height: 36px;
+.textCenter {
+    text-align: center;
+    display: block;
 }

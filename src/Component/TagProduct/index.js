@@ -11,7 +11,9 @@ function TagProduct({ data }) {
                 <img src={data.src} alt={data.name} />
             </div>
             <div className={cx('info-product')}>
-                <Button className={cx('name-product')}>{data.name}</Button>
+                <Button className={cx('name-product')} to={data.to}>
+                    {data.name}
+                </Button>
                 <div className={cx('prive-product')}>
                     <span className={cx('one-prive')}>{data.prive - (data.sale * data.prive) / 100}đ</span>
                 </div>

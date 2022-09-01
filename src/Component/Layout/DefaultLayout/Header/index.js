@@ -18,6 +18,8 @@ import Language from '~/Component/Poper/Language';
 import MenuButton from '~/Component/Poper/MenuButton';
 import Search from '~/Component/Poper/Search';
 import UserCart from '~/Component/Poper/UserCart';
+import FormUserSignIn from '~/Component/FormUserSignIn';
+import { useState } from 'react';
 
 const cx = classNames.bind(style);
 
@@ -33,23 +35,23 @@ const MENU_ITEMS = [
 export const MENU_BUTTONS = [
     {
         title: 'Hoa Của Mẹ',
-        to: '/',
+        to: '/shop',
     },
     {
         title: 'Hoa Cưới',
-        to: '/',
+        to: '/shop',
     },
     {
         title: 'Hoa Sale',
-        to: '/',
+        to: '/shop',
     },
     {
         title: 'Hoa Tựu Trường',
-        to: '/',
+        to: '/shop',
     },
     {
         title: 'Hoa Valentine',
-        to: '/',
+        to: '/shop',
     },
 ];
 
@@ -59,6 +61,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Tuy Luýp',
         prive: 240000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
+        to: '/shop',
         sale: 50,
     },
     {
@@ -66,6 +69,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Hồng',
         prive: 260000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
+        to: '/shop',
         sale: 30,
     },
     {
@@ -73,6 +77,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Hướng Dương ',
         prive: 270000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
+        to: '/shop',
         sale: 60,
     },
     {
@@ -80,6 +85,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Lan',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        to: '/shop',
         sale: 80,
     },
     {
@@ -87,6 +93,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Ly',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
+        to: '/shop',
         sale: 80,
     },
     {
@@ -94,6 +101,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Sen',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
+        to: '/shop',
         sale: 80,
     },
     {
@@ -101,6 +109,7 @@ export const LIST_PRODUCT = [
         name: 'Hoa Mai',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
+        to: '/shop',
         sale: 80,
     },
     {
@@ -108,10 +117,25 @@ export const LIST_PRODUCT = [
         name: 'Hoa Đào',
         prive: 280000,
         src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
+        to: '/shop',
         sale: 80,
     },
 ];
 function Header() {
+    const [block, setBlock] = useState({
+        display: 'none',
+    });
+    const hidenBlock = () => {
+        if (block.display === 'none')
+            setBlock({
+                display: 'block',
+            });
+        else {
+            setBlock({
+                display: 'none',
+            });
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('header-top')}>
@@ -213,23 +237,25 @@ function Header() {
                     <div>
                         <Search products={LIST_PRODUCT}>
                             <button className={cx('sidebar-btn')}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                <FontAwesomeIcon className={cx('sidebar-icon')} icon={faMagnifyingGlass} />
                             </button>
                         </Search>
                     </div>
 
                     <button className={cx('sidebar-btn')}>
-                        <FontAwesomeIcon icon={faHeart} />
+                        <FontAwesomeIcon className={cx('sidebar-icon')} icon={faHeart} />
                     </button>
-                    <button className={cx('sidebar-btn')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </button>
+                    {/* user */}
+                    <div className={cx('sidebar-btn')}>
+                        <FontAwesomeIcon className={cx('sidebar-icon')} icon={faUser} onClick={hidenBlock} />
+                        <FormUserSignIn block={block} onClick={hidenBlock} />
+                    </div>
 
                     {/* useCart */}
                     <div>
                         <UserCart products={LIST_PRODUCT}>
                             <button className={cx('sidebar-btn')}>
-                                <FontAwesomeIcon icon={faCartShopping} />
+                                <FontAwesomeIcon className={cx('sidebar-icon')} icon={faCartShopping} />
                             </button>
                         </UserCart>
                     </div>

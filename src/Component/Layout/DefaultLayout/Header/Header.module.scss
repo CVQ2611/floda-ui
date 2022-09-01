@@ -131,9 +131,10 @@
 .sidebar-btn {
     padding: 10px 0;
     font-size: 1.6rem;
+    line-height: 16px;
     cursor: pointer;
     margin-left: 4px;
-    &:hover {
+    &:hover > .sidebar-icon {
         transition: all 0.2s;
         color: var(--primary-color);
     }

@@ -19,7 +19,7 @@ function SliderCont({ img }) {
                         <div className={cx('banner-label__content-desc')}>
                             Thay Đổi Suy Nghĩ <br></br>và Cảm Nhận Tình Yêu
                         </div>
-                        <Button primary small>
+                        <Button primary medium to={'/shop'}>
                             Mua Ngay
                         </Button>
                     </div>
