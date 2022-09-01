@@ -18,9 +18,14 @@
 
 .button-item {
     width: 100%;
-    display: block;
+    display: flex;
     background-color: #fafafa;
     cursor: pointer;
     align-items: center;
     line-height: 3.6rem;
+    text-overflow: auto;
+}
+.tag-date {
+    display: block;
+    margin-left: 16px;
 }
