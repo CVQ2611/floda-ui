@@ -10,10 +10,10 @@ function FormUserSignIn({ block, onClick }) {
         <div className={cx('wrapper')} style={block}>
             <div className={cx('container')}>
                 <div className={cx('sign-in')}>
-                    <FormInput create />
+                    <FormInput create submit={onClick} />
                 </div>
                 <div className={cx('create')}>
-                    <FormInput signIn />
+                    <FormInput signIn submit={onClick} />
                 </div>
             </div>
             <span className={cx('close')} onClick={onClick}>

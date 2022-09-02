@@ -5,11 +5,16 @@ import InputItem from '../InputItem';
 import style from './FormInput.module.scss';
 const cx = classNames.bind(style);
 
-function FormInput({ create, signIn }) {
-    const [values, setValues] = useState({
+function FormInput({ create, signIn, submit }) {
+    const [valuesCreate, setValuesCreate] = useState({
         userName: '',
         password: '',
         confirmpassword: '',
+    });
+
+    const [valuesSignIn, setValuesSignIn] = useState({
+        userName: '',
+        password: '',
     });
 
     const creates = [
@@ -26,7 +31,7 @@ function FormInput({ create, signIn }) {
             id: 2,
             name: 'password',
             placeholder: 'Mật Khẩu!',
-            type: '',
+            type: 'password',
             label: 'Tạo mật khẩu của bạn!',
             errorMessage:
                 'Vui lòng nhập mật khẩu phải có 8-20 ký tự và bao gồm ít nhất 1 chữ cái, 1 số và 1 ký tự đặc biệt!',
@@ -37,11 +42,11 @@ function FormInput({ create, signIn }) {
             id: 3,
             name: 'confirmpassword',
             placeholder: 'Nhập lại Mật Khẩu!',
-            type: 'text',
+            type: 'password',
             label: 'Xác nhận mật khẩu của bạn!',
             errorMessage: 'Mật Khẩu nhập lại không giống!',
             required: true,
-            pattern: values.password,
+            pattern: valuesCreate.password,
         },
     ];
 
@@ -67,20 +72,30 @@ function FormInput({ create, signIn }) {
             pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
         },
     ];
-    const handleSubmit = (e) => {
+    const handleSubmitCreate = (e) => {
         e.preventDefault();
-        console.log(values);
+        submit();
+        console.log(valuesCreate);
     };
 
-    const onChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.value });
+    const handleSubmitSignIn = (e) => {
+        e.preventDefault();
+        submit();
+    };
+
+    const onChangeCreate = (e) => {
+        setValuesCreate({ ...valuesCreate, [e.target.name]: e.target.value });
+    };
+
+    const onChangeSignIn = (e) => {
+        setValuesSignIn({ ...valuesSignIn, [e.target.name]: e.target.value });
     };
     if (create) {
         return (
-            <form onSubmit={handleSubmit} className={cx('wrapper')}>
+            <form onSubmit={handleSubmitCreate} className={cx('wrapper')}>
                 <div className={cx('header')}>ĐĂNG KÝ</div>
                 {creates.map((input) => (
-                    <InputItem key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+                    <InputItem key={input.id} {...input} value={valuesCreate[input.name]} onChange={onChangeCreate} />
                 ))}
                 <span className={cx('button')}>
                     <Button primary>Submit</Button>
@@ -89,10 +104,10 @@ function FormInput({ create, signIn }) {
         );
     } else if (signIn) {
         return (
-            <form onSubmit={handleSubmit} className={cx('wrapper')}>
+            <form onSubmit={handleSubmitSignIn} className={cx('wrapper')}>
                 <div className={cx('header')}>ĐĂNG NHẬP</div>
                 {signIns.map((input) => (
-                    <InputItem key={input.id} {...input} value={values[input.name]} onChange={onChange} />
+                    <InputItem key={input.id} {...input} value={valuesSignIn[input.name]} onChange={onChangeSignIn} />
                 ))}
                 <span className={cx('button')}>
                     <Button primary>Submit</Button>

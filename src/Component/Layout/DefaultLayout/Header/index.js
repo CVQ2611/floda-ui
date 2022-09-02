@@ -5,6 +5,7 @@ import {
     faAngleDown,
     faCartShopping,
     faChevronDown,
+    faChevronUp,
     faHeart,
     faMagnifyingGlass,
     faUser,
@@ -12,7 +13,7 @@ import {
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import Button from '~/Component/Button';
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { Wrapper as PoperWrapper } from '~/Component/Poper';
 import Language from '~/Component/Poper/Language';
 import MenuButton from '~/Component/Poper/MenuButton';
@@ -136,60 +137,85 @@ function Header() {
             });
         }
     };
+
+    const [showTopHeader, setShowTopHeader] = useState(true);
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            // console.log(window.scrollY);
+            if (window.scrollY > 145) {
+                setShowTopHeader(false);
+            } else {
+                setShowTopHeader(true);
+            }
+        });
+        return () => {
+            window.removeEventListener('scroll', () => {
+                return 0;
+            });
+        };
+    }, []);
+
+    const backToTop = () => {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <header className={cx('wrapper')}>
-            <div className={cx('header-top')}>
-                <div className={cx('header-top__content')}>
-                    <div className={cx('header-top__content-left')}>
-                        <p>Welcome to Floda online store</p>
-                    </div>
-                    <div className={cx('header-top__content-right')}>
-                        <span>
-                            <Language items={MENU_ITEMS}>
-                                <button className={cx('header-language')}>
-                                    Language
-                                    <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
-                                </button>
-                            </Language>
-                        </span>
-                        <div className={cx('header-social-list')}>
-                            <Tippy
-                                render={(attrs) => (
-                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
-                                        Facebook
-                                    </div>
-                                )}
-                            >
-                                <button className={cx('btn')}>
-                                    <FontAwesomeIcon icon={faFacebookF} className={cx('header-social-item')} />
-                                </button>
-                            </Tippy>
-                            <Tippy
-                                render={(attrs) => (
-                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
-                                        Instagram
-                                    </div>
-                                )}
-                            >
-                                <button className={cx('btn')}>
-                                    <FontAwesomeIcon icon={faInstagram} className={cx('header-social-item')} />
-                                </button>
-                            </Tippy>
-                            <Tippy
-                                render={(attrs) => (
-                                    <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
-                                        Twitter
-                                    </div>
-                                )}
-                            >
-                                <button className={cx('btn')}>
-                                    <FontAwesomeIcon icon={faTwitter} className={cx('header-social-item')} />
-                                </button>
-                            </Tippy>
+            {showTopHeader && (
+                <div className={cx('header-top')}>
+                    <div className={cx('header-top__content')}>
+                        <div className={cx('header-top__content-left')}>
+                            <p>Welcome to Floda online store</p>
+                        </div>
+                        <div className={cx('header-top__content-right')}>
+                            <span>
+                                <Language items={MENU_ITEMS}>
+                                    <button className={cx('header-language')}>
+                                        Language
+                                        <FontAwesomeIcon icon={faAngleDown} className={cx('header-language-icon')} />
+                                    </button>
+                                </Language>
+                            </span>
+                            <div className={cx('header-social-list')}>
+                                <Tippy
+                                    render={(attrs) => (
+                                        <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                            Facebook
+                                        </div>
+                                    )}
+                                >
+                                    <button className={cx('btn')}>
+                                        <FontAwesomeIcon icon={faFacebookF} className={cx('header-social-item')} />
+                                    </button>
+                                </Tippy>
+                                <Tippy
+                                    render={(attrs) => (
+                                        <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                            Instagram
+                                        </div>
+                                    )}
+                                >
+                                    <button className={cx('btn')}>
+                                        <FontAwesomeIcon icon={faInstagram} className={cx('header-social-item')} />
+                                    </button>
+                                </Tippy>
+                                <Tippy
+                                    render={(attrs) => (
+                                        <div className={cx('sub-button')} tabIndex="-1" {...attrs}>
+                                            Twitter
+                                        </div>
+                                    )}
+                                >
+                                    <button className={cx('btn')}>
+                                        <FontAwesomeIcon icon={faTwitter} className={cx('header-social-item')} />
+                                    </button>
+                                </Tippy>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
             <div className={cx('header-main')}>
                 <div className={cx('header-main__logo')}>
                     <Button active className={cx('header-main__logo-btn')}>
@@ -261,6 +287,14 @@ function Header() {
                     </div>
                 </div>
             </div>
+
+            {!showTopHeader && (
+                <span className={cx('back-to-top')}>
+                    <Button onClick={backToTop}>
+                        <FontAwesomeIcon icon={faChevronUp} />
+                    </Button>
+                </span>
+            )}
         </header>
     );
 }

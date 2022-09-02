@@ -17,6 +17,7 @@ function InputItem(props) {
                 className={cx('input')}
                 name={props.name}
                 onChange={props.onChange}
+                type={props.type}
                 {...inputProps}
                 onBlur={onBlur}
                 onFocus={() => inputProps.name === 'confirmpassword' && setFocus(true)}

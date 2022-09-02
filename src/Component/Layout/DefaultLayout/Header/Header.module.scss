@@ -1,13 +1,16 @@
 .wrapper {
     width: 100%;
+    position: fixed;
+    z-index: 9999;
+    background-color: var(--white-color);
 }
-
+// header top
 .header-top {
     width: 100%;
     padding: 5px 0;
     min-height: 40px;
     border-bottom: 1px solid var(--boder-color);
-    display: block;
+    transition: all 0.2s;
 }
 
 .header-top__content {
@@ -137,5 +140,31 @@
     &:hover > .sidebar-icon {
         transition: all 0.2s;
         color: var(--primary-color);
+    }
+}
+
+// back top top
+
+.back-to-top {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    top: 550%;
+    right: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--boder-color);
+    line-height: 3.8rem;
+    transition: all linear 0.2s;
+
+    &:hover {
+        line-height: 1.6rem;
+        transition: all linear 0.2s;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        & > button {
+            color: var(--white-color);
+        }
+        border-color: var(--white-color);
     }
 }
