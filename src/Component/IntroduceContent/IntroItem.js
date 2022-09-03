@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './IntroduceContent.module.scss';
 
@@ -16,5 +17,9 @@ function IntroItem({ datas = [] }) {
         </div>
     );
 }
+
+IntroItem.propTypes = {
+    datas: PropTypes.array,
+};
 
 export default IntroItem;

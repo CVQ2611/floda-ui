@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './BannerIntro.module.scss';
 const cx = classNames.bind(style);
@@ -16,4 +17,7 @@ function BannerIntro({ item }) {
     );
 }
 
+BannerIntro.propTypes = {
+    item: PropTypes.string.isRequired,
+};
 export default BannerIntro;

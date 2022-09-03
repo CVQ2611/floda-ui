@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './FlowerLabel.module.scss';
 import Button from '../Button';
@@ -31,5 +32,9 @@ function BoxLabel({ item }) {
         </div>
     );
 }
+
+BoxLabel.propTypes = {
+    item: PropTypes.object,
+};
 
 export default BoxLabel;

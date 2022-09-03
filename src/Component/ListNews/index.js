@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import NewsItem from '../NewsItem';
 import style from './ListNews.module.scss';
@@ -12,5 +13,9 @@ function ListNews({ datas }) {
         </div>
     );
 }
+
+ListNews.propTypes = {
+    datas: PropTypes.array.isRequired,
+};
 
 export default ListNews;

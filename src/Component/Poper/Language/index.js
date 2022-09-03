@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import style from './Language.module.scss';
@@ -23,5 +24,9 @@ function Language({ children, items }) {
         </Tippy>
     );
 }
+Language.propTypes = {
+    children: PropTypes.node,
+    items: PropTypes.array.isRequired,
+};
 
 export default Language;

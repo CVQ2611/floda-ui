@@ -1,3 +1,4 @@
+import Proptypes from 'prop-types';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -6,7 +7,7 @@ import Button from '../Button';
 import style from './Product.module.scss';
 
 const cx = classNames.bind(style);
-function ProductItem({ item = [] }) {
+function ProductItem({ item }) {
     const [blockBox, setBlockBox] = useState(false);
     const [likeActive, setLikeActive] = useState(false);
 
@@ -46,24 +47,19 @@ function ProductItem({ item = [] }) {
     };
 
     return (
-        <div className={cx('product')}>
+        <div className={cx('product')} onMouseOver={handleOver} onMouseOut={handleOut}>
             <div className={cx('tag-sale')}>
                 {item.sale}% <br></br> Giảm{' '}
             </div>
             <Button product={true} to={item.to}>
-                <div
-                    className={cx('product-img')}
-                    style={image}
-                    onMouseOver={handleOver}
-                    onMouseOut={handleOut}
-                    onClick={handleClickLike}
-                >
-                    <div className={classes}>
-                        <FontAwesomeIcon icon={faHeart} />
-                    </div>
-                </div>
+                <div className={cx('product-img')} style={image}></div>
             </Button>
-            <button className={cx('product-name')}>{item.name}</button>
+            <div className={classes} onClick={handleClickLike}>
+                <FontAwesomeIcon icon={faHeart} />
+            </div>
+            <Button className={cx('product-name')} href={item.to}>
+                {item.name}
+            </Button>
             <div className={cx('product-price')}>
                 <span className={cx('price-base')} style={basePriceStyle}>
                     {item.prive}đ
@@ -75,5 +71,9 @@ function ProductItem({ item = [] }) {
         </div>
     );
 }
+
+ProductItem.propTypes = {
+    item: Proptypes.object.isRequired,
+};
 
 export default ProductItem;

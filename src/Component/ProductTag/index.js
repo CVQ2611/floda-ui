@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './ProductTagItem.module.scss';
 import TagProduct from '../TagProduct';
@@ -18,5 +19,9 @@ function ProductTag({ datas, name }) {
         </div>
     );
 }
+ProductTag.propTypes = {
+    datas: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired,
+};
 
 export default ProductTag;

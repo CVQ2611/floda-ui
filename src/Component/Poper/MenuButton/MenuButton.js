@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Button from '~/Component/Button';
 function MenuItem({ data }) {
     return (
@@ -6,5 +7,9 @@ function MenuItem({ data }) {
         </Button>
     );
 }
+
+MenuItem.propTypes = {
+    data: PropTypes.object,
+};
 
 export default MenuItem;

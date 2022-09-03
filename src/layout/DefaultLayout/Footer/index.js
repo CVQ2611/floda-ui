@@ -1,57 +1,14 @@
-import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import Adress from '~/Component/Adress';
 import Button from '~/Component/Button';
-import style from '~/Component/Layout/DefaultLayout/Footer/Footer.module.scss';
+import style from '~/layout/DefaultLayout/Footer/Footer.module.scss';
 import { publicPage } from '~/Routes';
-import { MENU_BUTTONS } from '../Header';
+import { MENU_BUTTONS } from '~/Data';
+import { LIST_SERVICE_LINK } from '~/Data';
+import { CONTACT_SHOP } from '~/Data';
 
 const cx = classNames.bind(style);
-const LIST_SERVICE_LINK = [
-    {
-        id: 1,
-        to: '/',
-        name: 'Tài khoản',
-    },
-    {
-        id: 2,
-        to: '/',
-        name: 'Địa Chỉ Cửa Hàng',
-    },
-    {
-        id: 3,
-        to: '/',
-        name: 'Theo Dõi Đơn Hàng',
-    },
-    {
-        id: 4,
-        to: '/',
-        name: 'Hướng Dẫn',
-    },
-    {
-        id: 5,
-        to: '/contact',
-        name: 'Liên Hệ',
-    },
-];
 
-const CONTACT_SHOP = [
-    {
-        icon: faLocationDot,
-        type: 'Địa chỉ',
-        contact: '319 C16 Lý Thường Kiệt, Phường 15, Quận 11, Tp.HCM',
-    },
-    {
-        icon: faPhone,
-        type: 'Điện Thoại',
-        contact: '(012) 800 456 789-987',
-    },
-    {
-        icon: faEnvelope,
-        type: 'Mail',
-        contact: 'yourmail@gmail.com',
-    },
-];
 function Footer() {
     return (
         <div className={cx('wrapper')}>

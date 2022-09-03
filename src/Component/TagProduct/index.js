@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './TagProduct.module.scss';
 import Button from '../Button';
@@ -21,5 +22,8 @@ function TagProduct({ data }) {
         </>
     );
 }
+TagProduct.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default TagProduct;

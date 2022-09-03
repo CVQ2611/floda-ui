@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './HeaderLable.module.scss';
 
@@ -9,5 +10,7 @@ function HeaderLable({ item }) {
         </div>
     );
 }
-
+HeaderLable.propTypes = {
+    item: PropTypes.string.isRequired,
+};
 export default HeaderLable;

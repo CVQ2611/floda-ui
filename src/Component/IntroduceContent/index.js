@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './IntroduceContent.module.scss';
 import IntroItem from './IntroItem';
@@ -21,5 +22,8 @@ function IntroduceContent({ item = {} }) {
         </div>
     );
 }
+IntroduceContent.propTypes = {
+    item: PropTypes.object,
+};
 
 export default IntroduceContent;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './ListProduct.module.scss';
 
@@ -15,5 +16,10 @@ function ListProduct({ children, datas = {} }) {
         </div>
     );
 }
+
+ListProduct.propTypes = {
+    children: PropTypes.node,
+    datas: PropTypes.object,
+};
 
 export default ListProduct;

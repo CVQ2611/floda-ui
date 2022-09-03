@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -22,5 +23,10 @@ function FormUserSignIn({ block, onClick }) {
         </div>
     );
 }
+
+FormUserSignIn.propTypes = {
+    block: PropTypes.object,
+    onClick: PropTypes.func,
+};
 
 export default FormUserSignIn;

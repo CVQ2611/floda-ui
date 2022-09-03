@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
 import style from './Input.module.scss';
@@ -99,5 +100,20 @@ function Input({
         </>
     );
 }
+
+Input.propTypes = {
+    isRequire: PropTypes.bool,
+    isPassWord: PropTypes.bool,
+    isEmail: PropTypes.bool,
+    isRePassword: PropTypes.bool,
+    textInput: PropTypes.bool,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    minLenght: PropTypes.number,
+    password: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+};
 
 export default Input;

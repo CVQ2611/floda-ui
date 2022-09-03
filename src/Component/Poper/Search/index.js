@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PoperWrapper } from '~/Component/Poper';
 import classNames from 'classnames/bind';
@@ -10,7 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const cx = classNames.bind(style);
 
-function Search({ children, products = [] }) {
+function Search({ children, products }) {
     const [searchValue, setSearchValue] = useState('');
     const [searchItem, setSearchItem] = useState([]);
     const inputRef = useRef();
@@ -87,5 +88,10 @@ function Search({ children, products = [] }) {
         </Tippy>
     );
 }
+
+Search.propTypes = {
+    children: PropTypes.node.isRequired,
+    products: PropTypes.array.isRequired,
+};
 
 export default Search;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 import style from './InputItem.module.scss';
@@ -27,5 +28,9 @@ function InputItem(props) {
         </div>
     );
 }
+
+InputItem.propTypes = {
+    props: PropTypes.object,
+};
 
 export default InputItem;

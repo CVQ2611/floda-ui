@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -17,5 +18,9 @@ function CartResult({ data }) {
         </div>
     );
 }
+
+CartResult.propTypes = {
+    data: PropTypes.object,
+};
 
 export default CartResult;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './SidebarButton.module.scss';
 import MenuItem from '../Poper/MenuButton/MenuButton';
@@ -31,5 +32,9 @@ function SidebarButton({ datas, name }) {
         </div>
     );
 }
+SidebarButton.propTypes = {
+    datas: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired,
+};
 
 export default SidebarButton;

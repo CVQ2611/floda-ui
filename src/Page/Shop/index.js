@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import HeaderLable from '~/Component/HeaderLabel';
 import Product from '~/Component/Product';
 import style from './ShopPage.module.scss';
-import { LIST_PRODUCT } from '~/Component/Layout/DefaultLayout/Header';
-import { MENU_BUTTONS } from '~/Component/Layout/DefaultLayout/Header';
+import { LIST_PRODUCT } from '~/Data';
+import { MENU_BUTTONS } from '~/Data';
 import SidebarButton from '~/Component/SidebarButton';
 import ProductTag from '~/Component/ProductTag';
 const cx = classNames.bind(style);
@@ -26,5 +27,8 @@ function ShopPage({ data }) {
         </div>
     );
 }
+ShopPage.propTypes = {
+    data: PropTypes.string.isRequired,
+};
 
 export default ShopPage;

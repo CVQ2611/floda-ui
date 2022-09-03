@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import BoxIcon from './BoxIcon';
 import style from './LabelIcon.module.scss';
@@ -14,5 +15,7 @@ function LabelIcon({ datas = [] }) {
         </div>
     );
 }
-
+LabelIcon.propTypes = {
+    datas: PropTypes.array.isRequired,
+};
 export default LabelIcon;

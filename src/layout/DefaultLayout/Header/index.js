@@ -21,107 +21,12 @@ import Search from '~/Component/Poper/Search';
 import UserCart from '~/Component/Poper/UserCart';
 import FormUserSignIn from '~/Component/FormUserSignIn';
 import { useState } from 'react';
+import { MENU_ITEMS } from '~/Data';
+import { MENU_BUTTONS } from '~/Data';
+import { LIST_PRODUCT } from '~/Data';
 
 const cx = classNames.bind(style);
 
-const MENU_ITEMS = [
-    {
-        title: 'English',
-    },
-    {
-        title: 'Vietnamese',
-    },
-];
-
-export const MENU_BUTTONS = [
-    {
-        title: 'Hoa Của Mẹ',
-        to: '/shop',
-    },
-    {
-        title: 'Hoa Cưới',
-        to: '/shop',
-    },
-    {
-        title: 'Hoa Sale',
-        to: '/shop',
-    },
-    {
-        title: 'Hoa Tựu Trường',
-        to: '/shop',
-    },
-    {
-        title: 'Hoa Valentine',
-        to: '/shop',
-    },
-];
-
-export const LIST_PRODUCT = [
-    {
-        id: 1,
-        name: 'Hoa Tuy Luýp',
-        prive: 240000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
-        to: '/shop',
-        sale: 50,
-    },
-    {
-        id: 2,
-        name: 'Hoa Hồng',
-        prive: 260000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
-        to: '/shop',
-        sale: 30,
-    },
-    {
-        id: 3,
-        name: 'Hoa Hướng Dương ',
-        prive: 270000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
-        to: '/shop',
-        sale: 60,
-    },
-    {
-        id: 4,
-        name: 'Hoa Lan',
-        prive: 280000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
-        to: '/shop',
-        sale: 80,
-    },
-    {
-        id: 5,
-        name: 'Hoa Ly',
-        prive: 280000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-11.jpg',
-        to: '/shop',
-        sale: 80,
-    },
-    {
-        id: 6,
-        name: 'Hoa Sen',
-        prive: 280000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-10.jpg',
-        to: '/shop',
-        sale: 80,
-    },
-    {
-        id: 7,
-        name: 'Hoa Mai',
-        prive: 280000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-7.jpg',
-        to: '/shop',
-        sale: 80,
-    },
-    {
-        id: 8,
-        name: 'Hoa Đào',
-        prive: 280000,
-        src: 'http://mauweb.monamedia.net/floda/wp-content/uploads/2019/09/product-8.jpg',
-        to: '/shop',
-        sale: 80,
-    },
-];
 function Header() {
     const [block, setBlock] = useState({
         display: 'none',

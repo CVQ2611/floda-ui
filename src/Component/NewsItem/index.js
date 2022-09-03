@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 import Button from '../Button';
 import TagDate from '../TagDate';
@@ -25,5 +26,9 @@ function NewsItem({ item }) {
         </div>
     );
 }
+
+NewsItem.propTypes = {
+    item: PropTypes.object.isRequired,
+};
 
 export default NewsItem;

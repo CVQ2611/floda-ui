@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import BannerIntro from '~/Component/BannerIntro';
 import ContactContai from '~/Component/ContactContai';
@@ -11,5 +12,9 @@ function ContactPage({ data }) {
         </div>
     );
 }
+
+ContactPage.propTypes = {
+    data: PropTypes.string.isRequired,
+};
 
 export default ContactPage;

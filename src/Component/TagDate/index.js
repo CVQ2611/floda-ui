@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './TagDate.module.scss';
 const cx = classNames.bind(style);
@@ -10,5 +11,8 @@ function TagDate({ data = {} }) {
         </div>
     );
 }
+TagDate.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default TagDate;

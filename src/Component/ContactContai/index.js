@@ -2,27 +2,10 @@ import classNames from 'classnames/bind';
 import style from './ContactContai.module.scss';
 import Map from '~/Component/Map';
 import Adress from '../Adress';
-import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import Form from '../Form';
+import { CONTACT_SHOP } from '~/Data';
 
 const cx = classNames.bind(style);
-const CONTACT_SHOP = [
-    {
-        icon: faLocationDot,
-        type: 'Địa chỉ',
-        contact: '319 C16 Lý Thường Kiệt, Phường 15, Quận 11, Tp.HCM',
-    },
-    {
-        icon: faPhone,
-        type: 'Điện Thoại',
-        contact: '(012) 800 456 789-987',
-    },
-    {
-        icon: faEnvelope,
-        type: 'Mail',
-        contact: 'yourmail@gmail.com',
-    },
-];
 
 function ContactContai() {
     return (

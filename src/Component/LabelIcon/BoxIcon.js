@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './LabelIcon.module.scss';
 const cx = classNames.bind(style);
-function BoxIcon({ item = [] }) {
+function BoxIcon({ item }) {
     return (
         <div className={cx('box')}>
             <div className={cx('box-icon')}>
@@ -14,5 +15,9 @@ function BoxIcon({ item = [] }) {
         </div>
     );
 }
+
+BoxIcon.propTypes = {
+    item: PropTypes.object.isRequired,
+};
 
 export default BoxIcon;

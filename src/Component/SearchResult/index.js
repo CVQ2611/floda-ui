@@ -1,3 +1,4 @@
+import Proptypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './SearchResult.module.scss';
 
@@ -17,5 +18,9 @@ function SearchResult({ data }) {
         </div>
     );
 }
+
+SearchResult.propTypes = {
+    data: Proptypes.object.isRequired,
+};
 
 export default SearchResult;

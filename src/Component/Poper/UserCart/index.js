@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import CartResult from '~/Component/CartResult';
@@ -7,7 +8,7 @@ import Button from '~/Component/Button';
 // import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(style);
-function UserCart({ children, products = [] }) {
+function UserCart({ children, products }) {
     // const [itemCart, setItemCart] = useState([]);
     return (
         <Tippy
@@ -37,5 +38,10 @@ function UserCart({ children, products = [] }) {
         </Tippy>
     );
 }
+
+UserCart.propTypes = {
+    children: PropTypes.node,
+    products: PropTypes.array.isRequired,
+};
 
 export default UserCart;

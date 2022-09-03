@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './Adress.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,4 +21,7 @@ function Adress({ item = {} }) {
     );
 }
 
+Adress.propTypes = {
+    item: PropTypes.array,
+};
 export default Adress;

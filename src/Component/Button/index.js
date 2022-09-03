@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from '~/Component/Button/Button.module.scss';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
@@ -10,19 +11,19 @@ function Button({
     onClick,
     onSubmit,
     children,
-    primary,
-    black,
-    outline,
-    small,
-    medium,
-    large,
-    xlarge,
-    inList,
-    active,
-    searchResult,
-    product,
-    footer,
-    textCenter,
+    primary = false,
+    black = false,
+    outline = false,
+    small = false,
+    medium = false,
+    large = false,
+    xlarge = false,
+    inList = false,
+    active = false,
+    searchResult = false,
+    product = false,
+    footer = false,
+    textCenter = false,
     ...passProps
 }) {
     let Comp = 'button';
@@ -58,5 +59,24 @@ function Button({
         </Comp>
     );
 }
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    link: PropTypes.string,
+    onClick: PropTypes.func,
+    onSubmit: PropTypes.func,
+    children: PropTypes.node,
+    small: PropTypes.bool,
+    medium: PropTypes.bool,
+    large: PropTypes.bool,
+    xlarge: PropTypes.bool,
+    inList: PropTypes.bool,
+    active: PropTypes.bool,
+    searchResult: PropTypes.bool,
+    product: PropTypes.bool,
+    footer: PropTypes.bool,
+    textCenter: PropTypes.bool,
+};
 
 export default Button;

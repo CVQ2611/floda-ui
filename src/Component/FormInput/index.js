@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 import Button from '../Button';
@@ -17,7 +18,7 @@ function FormInput({ create, signIn, submit }) {
         password: '',
     });
 
-    const creates = [
+    const createsForm = [
         {
             id: 1,
             name: 'userName',
@@ -50,7 +51,7 @@ function FormInput({ create, signIn, submit }) {
         },
     ];
 
-    const signIns = [
+    const signInsForm = [
         {
             id: 1,
             name: 'userName',
@@ -94,7 +95,7 @@ function FormInput({ create, signIn, submit }) {
         return (
             <form onSubmit={handleSubmitCreate} className={cx('wrapper')}>
                 <div className={cx('header')}>ĐĂNG KÝ</div>
-                {creates.map((input) => (
+                {createsForm.map((input) => (
                     <InputItem key={input.id} {...input} value={valuesCreate[input.name]} onChange={onChangeCreate} />
                 ))}
                 <span className={cx('button')}>
@@ -106,7 +107,7 @@ function FormInput({ create, signIn, submit }) {
         return (
             <form onSubmit={handleSubmitSignIn} className={cx('wrapper')}>
                 <div className={cx('header')}>ĐĂNG NHẬP</div>
-                {signIns.map((input) => (
+                {signInsForm.map((input) => (
                     <InputItem key={input.id} {...input} value={valuesSignIn[input.name]} onChange={onChangeSignIn} />
                 ))}
                 <span className={cx('button')}>
@@ -116,5 +117,11 @@ function FormInput({ create, signIn, submit }) {
         );
     }
 }
+
+FormInput.propTypes = {
+    create: PropTypes.bool,
+    signIn: PropTypes.bool,
+    submit: PropTypes.func,
+};
 
 export default FormInput;
